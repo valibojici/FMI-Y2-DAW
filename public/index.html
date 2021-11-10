@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Proiect</title>
+</head>
+<body class="bg-gray-200">
+	<div class="container w-2/3 mx-auto my-8 p-8 bg-green-800 bg-opacity-20">
+		<div class="title">
+			<h1 class="text-4xl m-4 text-center">Proiect Dezvoltarea Aplicatiilor Web in PHP</h1>
+			<h1 class="text-3xl m-4 text-center">Subiect - Activitatile unui hotel</h1>
+			<h1 class="text-2xl m-4 text-center">Bojici Valentin - grupa 231</h1>
+		</div>
+
+		<div class="descriere mt-12 p-4">
+			<div class="introducere">
+				<h1 class="text-2xl">Despre</h1>
+				<div>Proiectul este despre site-ul unui hotel. Rolul principal al aplicatiei este de a permite realizarea de rezervari. Vizitatorii vor putea accesa site-ul pentru a vedea informatii generale precum descrierea hotelului, preturi, camere, locatie etc. Aplicatia va permite vizitatorilor sa isi creeze un cont pentru a realiza rezervari, vedea istoricul rezervarilor si a lasa comentarii dupa check-in.</div>
+			</div>
+			<div class="er">
+				<h1 class="text-2xl text-center">Diagrama ER</h1>
+				<div class="img-container mx-auto w-1/2 object-contain"><img src="./imgs/bd.png" alt=""></div>
+			</div>
+
+			<div class="usecase">
+				<h1 class="text-2xl text-center">Diagrama use case</h1>
+				<div class="img-container mx-auto w-2/3 object-contain"><img src="./imgs/use_case_diagram.png" alt=""></div>
+			</div>
+
+			<div class="activity">
+				<h1 class="text-2xl text-center">Diagrama de activitate</h1>
+				<div class="img-container mx-auto w-full object-contain"><img src="./imgs/activity_diagram.png" alt=""></div>
+			</div>
+
+
+			<div class="signup mt-4">
+				<h3 class="text-2xl">Sign-up</h3>
+				<div class="descriere-signup">
+					Pentru a creea un cont vor fi necesare urmatoarele informatii: email, nume, prenume, numar telefon, parola. Email-ul va trebui sa fie unic pentru fiecare utilizator si contul va trebui verificat pentru a completa inregistrarea contului.
+				</div>
+			</div>
+
+			<div class="login mt-4">
+				<h3 class="text-2xl">Login (utilizator)</h3>
+				<div class="descriere-login">
+					Pentru a se conecta la cont, utilizatorul trebuie sa introduca email-ul si parola.
+				</div>
+
+				<h3 class="text-2xl">Login (admin)</h3>
+				<div class="descriere-login">
+					Pentru a se conecta la cont, adminul trebuie sa introduca username-ul si parola.
+				</div>
+			</div>
+
+
+			<div class="cont mt-4">
+				<h3 class="text-2xl">Cont</h3>
+				<div class="descriere-cont">
+					Utilizatorii isi vor putea vedea detaliile legate de contul lor: email, nume, prenume, telefon, parola. Isi vor putea actualiza informatiile <b>(cu exceptia email-ului)</b>. De asemenea aici vor putea vedea si istoricul rezervarilor.
+				</div>
+			</div>
+
+			<div class="rezervarile-mele mt-4">
+				<h3 class="text-2xl">Istoric rezervari</h3>
+				<div class="descriere-rezervarile-mele">
+					Pentru fiecare rezervare se afiseaza un rezumat. Daca rezervarea nu a fost dusa la capat (adica nu s-a facut check-in inca) se poate modifica sau sterge.
+				</div>
+			</div>
+
+			<div class="rezervare mt-4">
+				<h3 class="text-2xl">Rezervare</h3>
+				<div class="descriere-rezervare">
+					<ul class="list-disc mx-12">
+						<li>Fiecare utilizator va avea cel mult 1 rezervare in desfasurare in orice moment.</li>
+						<li>Pentru a crea o rezervare noua va trebui sa o completeze pe cea in desfasurare daca exista.</li>
+						<li>O rezervare presupune alegerea unei camere, nu se pot alege mai multe camere in aceasi rezervare.</li>
+						<li>Utilizatorul va introduce date despre numarul de oaspeti si data de check-in si check-out</li>
+						<li>Daca exista camere disponibile se vor afisa tipul camerelor iar utilizatorul trebuie sa aleaga un tip de camera.</li>
+						<li>Rezervarea se introduce in baza de date dupa ce a fost confirmata (daca doar o camera mai este libera si mai multi utilizatori o aleg, la pasul urmator primul care completeaza datele va primi camera iar ceilalti vor trebui sa modifice informatiile)</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="plata mt-4">
+				<h3 class="text-2xl">Confirmare rezervare</h3>
+				<div class="descriere-plata">
+					<ul class="list-disc mx-12">
+						<li>
+							In acest meniu se afiseaza un rezumat al rezervarii curente iar utilizatorul trebuie sa introduca datele cardului pentru a confirma rezervarea.
+						</li>
+						<li>
+							Dupa introducerea datelor, se face o verificare finala a rezervarii.
+						</li>
+						<li>
+							 Daca verificarea reuseste, va fi introdusa rezervarea in baza de data(acum utilizatorul poate crea o noua rezervare). Daca verificarea nu reuseste (toate camerele au fost rezervare deja) utilizatorul va primi un mesaj de eroare si va trebui sa modifice datele din &quot;Rezervare&quot;.
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="comentarii mt-4">
+				<h3 class="text-2xl">Comentarii</h3>
+				<div class="descriere-comentarii">
+					Utilizatorii care au ajuns la hotel (check-in) vor putea lasa un comentariu in sectiunea de comentarii. Va trebui aprobat de admin pentru a fi vizibil celorlalti. 
+				</div>
+			</div>
+
+			<div class="admin mt-4">
+				<h3 class="text-2xl">Admin</h3>
+				<div class="descriere-admin">
+					Un admin poate modifica datele din tabelele din baza de date. La accesarea sectiunii &quot;Comentarii&quot; va putea vedea comentarile neaprobate inca si le poate aproba sau nu.
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	
+
+ 
+</body>
+</html>
