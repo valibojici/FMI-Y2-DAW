@@ -1,0 +1,154 @@
+* {
+  font-family: "Cousine", monospace;
+  font-family: "Frank Ruhl Libre", serif;
+  font-family: "Great Vibes", cursive;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+.navbar {
+  background-color: rgba(245, 242, 236, 0.65) !important;
+  font-family: "Cousine", monospace;
+  font-family: "Frank Ruhl Libre", serif;
+  font-style: italic;
+}
+
+.title-container #hotel-name {
+  margin-top: 10rem !important;
+  font-family: "Cousine", monospace;
+  font-family: "Frank Ruhl Libre", serif;
+  font-family: "Great Vibes", cursive;
+  font-size: 7rem;
+  text-shadow: 7px 7px 7px black;
+}
+.title-container .book-button {
+  width: 20%;
+  background-color: #d88275;
+  color: white;
+  font-family: "Cousine", monospace;
+  font-family: "Frank Ruhl Libre", serif;
+  font-family: "Great Vibes", cursive;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+.title-container .book-button:hover {
+  background-color: #a5685f;
+}
+.title-container .book-button:focus {
+  box-shadow: none;
+}
+
+#home-container {
+  padding: 1rem;
+  margin-top: 10rem !important;
+  background-color: rgba(36, 33, 33, 0.747);
+}
+#home-container p {
+  color: white;
+  text-shadow: 8px 8px 6px black;
+}
+#home-container .line::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  display: inline-block;
+  background-color: white;
+}
+
+#room-container {
+  padding: 1rem;
+  margin-top: 10em !important;
+  background-color: rgba(226, 226, 226, 0.753);
+}
+#room-container p {
+  color: black;
+  text-shadow: 8px 8px 6px white;
+}
+#room-container .line::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  display: inline-block;
+  background-color: black;
+}
+#room-container .btn {
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: #d88275;
+  font-family: "Cousine", monospace;
+  font-family: "Frank Ruhl Libre", serif;
+  font-family: "Great Vibes", cursive;
+  font-family: "Montserrat", sans-serif;
+}
+#room-container .btn:focus {
+  box-shadow: none;
+}
+#room-container .btn:hover {
+  background-color: #a5685f;
+}
+
+.room-images-container img {
+  clip-path: polygon(0 0, 100% 10%, 100% 93%, 0 100%);
+}
+
+footer {
+  position: absolute;
+  bottom: -5rem;
+  width: 100%;
+  left: 0;
+  height: 2.5rem;
+}
+footer .footer-title {
+  font-family: "Cousine", monospace;
+  font-family: "Frank Ruhl Libre", serif;
+  font-family: "Great Vibes", cursive;
+}
+footer .footer-container {
+  background-color: rgba(10, 10, 10, 0.9);
+}
+
+/* 
+    ////////////////////////////////////////
+                    LOGIN 
+    ////////////////////////////////////////
+*/
+.login-form {
+  background-color: rgba(213, 213, 213, 0.88);
+}
+
+/* 
+    ////////////////////////////////////////
+                    SIGN UP 
+    ////////////////////////////////////////
+*/
+.signup-form {
+  background-color: rgba(213, 213, 213, 0.88);
+}
+
+/* 
+    ////////////////////////////////////////
+                    MY ACCOUNT
+    ////////////////////////////////////////
+*/
+.user-info-container {
+  background-color: rgba(213, 213, 213, 0.88);
+}
+
+/* 
+    ////////////////////////////////////////
+                    ROOMS
+    ////////////////////////////////////////
+*/
+.room-title {
+  margin: 10vh 0px;
+}
+
+.room-container {
+  background-color: rgba(245, 245, 245, 0.85);
+}
