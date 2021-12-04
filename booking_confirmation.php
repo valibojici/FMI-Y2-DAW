@@ -12,12 +12,12 @@
         exit;
     }
 
-    require_once './view/view.php';
+    require_once './includes/view/view.php';
 
     $view = new View(['title' => 'Booking | Hillside Hotel']);
     if(isset($_SESSION['booking_error'])){
         $view->assign('booking_error', $_SESSION['booking_error']);
-        $view->render('./view/message.tpl.php');
+        $view->render('./includes/view/message.tpl.php');
         exit;
     }
     
@@ -27,7 +27,8 @@
     $view->assign('nights', $_SESSION['booking_info']['nights']);
     $view->assign('room_type', $_SESSION['booking_info']['room_type']);
     $view->assign('total', $_SESSION['booking_info']['total']);
-    $view->render('./view/confirm_booking.tpl.php');
+
+    $view->render('./includes/view/confirm_booking.tpl.php');
 
     function formatDate($date){
         $date = new DateTime($date);

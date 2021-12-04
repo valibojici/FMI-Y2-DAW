@@ -1,9 +1,9 @@
 <?php
-    require_once './view/view.php';
+    require_once './includes/view/view.php';
     $view = new View(['title' => 'Facilities | Hillside Hotel']);
 
-    require_once './model/connectDB.php';
-    require_once './model/facility.model.php';
+    require_once './includes/model/connectDB.php';
+    require_once './includes/model/facility.model.php';
 
     $conn = connectDB();
     $facilities = getFacilities($conn);
@@ -16,6 +16,6 @@
     }
 
     $view->assign('facilities', $facilities);
-    $view->render('./view/facilities.tpl.php');
+    $view->render('./includes/view/facilities.tpl.php');
 
 ?>

@@ -1,6 +1,6 @@
-<?php include './view/partials/header.php' ?>
-<?php include './view/partials/navbar.php' ?>
-<?php include './view/partials/bg.php' ?>
+<?php include './includes/view/partials/header.php' ?>
+<?php include './includes/view/partials/navbar.php' ?>
+<?php include './includes/view/partials/bg.php' ?>
 
 <div class="container-fluid p-3 my-5">
     <?php foreach($facilities as $fac) : ?>
@@ -41,4 +41,4 @@
     <?php endforeach ?>
 </div>
 
-<?php include './view/partials/footer.php' ?>
+<?php include './includes/view/partials/footer.php' ?>

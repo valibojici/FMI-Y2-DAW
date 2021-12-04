@@ -6,11 +6,11 @@
         exit;
     }
 
-    require_once './view/view.php';
+    require_once './includes/view/view.php';
     $view = new View();
     $view->assign('title', 'Login | Hillside Hotel');
 
-    $view->render('./view/login.tpl.php');
+    $view->render('./includes/view/login.tpl.php');
 
     unset($_SESSION['login_error']);
 ?>

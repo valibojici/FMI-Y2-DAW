@@ -1,7 +1,7 @@
 <?php
-    require_once './view/view.php';
+    require_once './includes/view/view.php';
 
     $view = new View(['title' => 'Signup | Hillside Hotel']);
     $view->assign('message', 'Success! You can now login!');
-    $view->render('./view/message.tpl.php');
+    $view->render('./includes/view/message.tpl.php');
 ?>

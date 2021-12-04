@@ -20,7 +20,7 @@
         $year = trim($_POST['year']);
         $cvv = trim($_POST['cvv']);
 
-        require_once './extra/validations.php';
+        require_once './includes/extra/validations.php';
         $isOk = true;
 
         $isOk &= validateCardNumber($card) === true;
@@ -30,12 +30,12 @@
         
         $isOk &= (intval($year) > date('Y') || intval($year) == date('Y') && intval($month) > date('m'));
 
-        require_once './view/view.php';
+        require_once './includes/view/view.php';
         $view = new View(['title' => 'Processing Booking | Hillside Hotel']);
 
         if(!$isOk || !maPrefacCaTestezCardul($card, $month, $year, $cvv)){
             $view->assign('message', 'Error: invalid credit card');
-            $view->render('./view/message.tpl.php');
+            $view->render('./includes/view/message.tpl.php');
             exit;
         }
 
@@ -46,8 +46,8 @@
         $room_type = $_SESSION['booking_info']['room_type'];
         $total = $_SESSION['booking_info']['total'];
 
-        require_once './model/connectDB.php';
-        require_once './model/reservation.model.php';
+        require_once './includes/model/connectDB.php';
+        require_once './includes/model/reservation.model.php';
         $conn = connectDB();
 
         $ok = makeReservation($conn, $_SESSION['user_email'], $room_type, $checkin, $checkout, $guests, $total);

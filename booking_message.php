@@ -11,9 +11,9 @@
         exit;
     }
 
-    require_once './view/view.php';
+    require_once './includes/view/view.php';
 
     $view = new View(['title' => 'Booking | Hillside Hotel']);
     $view->assign('message', $_SESSION['booking_message']);
-    $view->render('./view/message.tpl.php');
+    $view->render('./includes/view/message.tpl.php');
 ?>

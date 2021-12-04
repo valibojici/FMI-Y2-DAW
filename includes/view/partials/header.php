@@ -25,6 +25,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cousine:wght@400;700&family=Frank+Ruhl+Libre&family=Great+Vibes&family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
     <!-- end font -->
 
-    <link rel="stylesheet" href="./view/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>

@@ -6,14 +6,14 @@ session_start();
         exit;
     }
 
-    require_once './view/view.php';
+    require_once './includes/view/view.php';
     $view = new View(['title' => 'Booking | Hillside Hotel']);
 
     if($_SERVER['REQUEST_METHOD'] === 'GET'){
         unset($_SESSION['booking_info']);
         unset($_SESSION['available_types']);
         unset($_SESSION['available_types_error']);
-        $view->render('./view/booking.tpl.php');
+        $view->render('./includes/view/booking.tpl.php');
         exit;
     }
     
@@ -24,12 +24,10 @@ session_start();
         $checkout = $_POST['checkout'];
         $guests = $_POST['guests'];
 
-        require_once './extra/validations.php';
-        require_once './model/connectDB.php';
-        require_once './model/room.model.php';
+        require_once './includes/extra/validations.php';
+        require_once './includes/model/connectDB.php';
+        require_once './includes/model/room.model.php';
         $conn = connectDB();
-
-        $_SESSION['booking_info'] = ['checkin' => $checkin, 'checkout' => $checkout, 'guests' => $guests, 'nights' => $nights];
 
         if(validateDate($checkin) === false || validateDate($checkout) === false){
             $_SESSION['available_types_error'] = 1;
@@ -60,7 +58,6 @@ session_start();
         $checkout_date = new DateTime($checkout);
         $nights = $checkout_date->diff($checkin_date)->format('%a');
         
-        
         foreach($types as $type_name){
             $info = getRoomInfo($conn, $type_name); // intoarce ceva de genul ['nume' => ... , 'descriere' => ...];
             $room_types_info[$type_name] = $info;
@@ -72,7 +69,7 @@ session_start();
             $room_types_info[$type_name]['total'] = $nights * $room_types_info[$type_name]['pret'];
         }
         
-        
+        $_SESSION['booking_info'] = ['checkin' => $checkin, 'checkout' => $checkout, 'guests' => $guests, 'nights' => $nights];
         $_SESSION['available_types'] = $room_types_info;
         header('Location: booking_results.php');
     }

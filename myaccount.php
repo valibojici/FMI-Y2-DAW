@@ -5,11 +5,11 @@
         exit;
     }
 
-    require_once './view/view.php';
-    require_once './model/connectDB.php';
-    require_once './model/user.model.php';
-    require_once './model/room.model.php';
-    require_once './model/reservation.model.php';
+    require_once './includes/view/view.php';
+    require_once './includes/model/connectDB.php';
+    require_once './includes/model/user.model.php';
+    require_once './includes/model/room.model.php';
+    require_once './includes/model/reservation.model.php';
 
     $conn = connectDB();
     $user_data = getUserData($conn, $_SESSION['user_email']);
@@ -30,5 +30,5 @@
     $view->assign('phone', $user_data['telefon']);
     $view->assign('email', $_SESSION['user_email']);
  
-    $view->render('./view/myaccount.tpl.php');
+    $view->render('./includes/view/myaccount.tpl.php');
 ?>

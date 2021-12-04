@@ -3,8 +3,8 @@
         $email = $_POST['email'];
         $pass  = $_POST['password'];
         
-        require_once './model/connectDB.php';
-        require_once './model/user.model.php';
+        require_once './includes/model/connectDB.php';
+        require_once './includes/model/user.model.php';
 
         $conn = connectDB();
 

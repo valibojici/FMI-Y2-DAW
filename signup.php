@@ -6,11 +6,11 @@
         exit;
     }
 
-    require_once './view/view.php';
+    require_once './includes/view/view.php';
     $view = new View();
     $view->assign('title', 'Sign up | Hillside Hotel');
 
-    $view->render('./view/signup.tpl.php');
+    $view->render('./includes/view/signup.tpl.php');
 
     unset($_SESSION['fname_error']);
     unset($_SESSION['lname_error']);

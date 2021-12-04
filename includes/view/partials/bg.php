@@ -1,5 +1,5 @@
 <div style="
-    background-image: url('./view/imgs/bg2.jpg');
+    background-image: url('./imgs/bg2.jpg');
 
     background-position: center;
     background-repeat: no-repeat;

@@ -1,6 +1,6 @@
-<?php include './view/partials/header.php' ?>
-<?php include './view/partials/navbar.php' ?>
-<?php include './view/partials/bg.php' ?>
+<?php include './includes/view/partials/header.php' ?>
+<?php include './includes/view/partials/navbar.php' ?>
+<?php include './includes/view/partials/bg.php' ?>
  
 <div class="container d-flex mt-5 align-items-center flex-column">
 
@@ -58,4 +58,4 @@
 
 </div>
 
-<?php include './view/partials/footer.php' ?>
+<?php include './includes/view/partials/footer.php' ?>
