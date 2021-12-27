@@ -2,28 +2,26 @@
 <?php include './includes/view/partials/navbar.php' ?>
 <?php include './includes/view/partials/bg.php' ?>
 
-<?php if(!isset($_SESSION)) session_start(); ?>
-
 <div class="container d-flex mt-5 justify-content-center">
     <form action="booking.php" class="p-5 rounded-3 login-form col-12 col-md-8 col-lg-5 col-xl-4" method="post">
 
         <div class="input-wrapper text-center">
             <div class="mt-3">Check in</div>
-            <input type="date" id="checkin" name="checkin" class="p-1 w-100 user-select-none" value="<?php echo isset($_SESSION['booking_info']) ? $_SESSION['booking_info']['checkin'] : "" ?>">
+            <input type="date" id="checkin" name="checkin" class="p-1 w-100 user-select-none" value="<?php echo isset($booking_info) ? $booking_info['checkin'] : "" ?>">
         
             <div class="mt-3">Check out</div>
-            <input type="date" id="checkout" name="checkout" class="p-1 w-100 user-select-none" value="<?php echo isset($_SESSION['booking_info']) ? $_SESSION['booking_info']['checkout'] : "" ?>">
+            <input type="date" id="checkout" name="checkout" class="p-1 w-100 user-select-none" value="<?php echo isset($booking_info) ? $booking_info['checkout'] : "" ?>">
 
             <div class="mt-3">Guests</div>
             <select name="guests" id="guests" class="p-1">
-                <?php for($i = 1; $i <= 5; ++$i) : ?>
-                    <option value=" <?php echo $i ?> " <?php if(isset($_SESSION['booking_info']) && $_SESSION['booking_info']['guests'] == $i) echo 'selected'?> ><?php echo $i ?></option>
+                <?php for($i = $min_guests; $i <= $max_guests; ++$i) : ?>
+                    <option value=" <?php echo $i ?> " <?php if(($booking_info['guests'] ?? null) == $i) echo 'selected' ?> ><?php echo $i ?></option>
                 <?php endfor; ?>
             </select>
         </div>
 
         <div class="text-center mt-4">
-            <button type="submit" class="btn btn-primary mt-3">See available rooms</button>
+            <button type="submit" class="btn btn-pink mt-3 text-light">See available rooms</button>
         </div>
     </form>
 </div>
@@ -34,7 +32,7 @@
                 <span>We're sorry, no rooms are available. Please change your check-in or check-out date or the number of guests.</span>
             </div>
     </div>
-<?php elseif(isset($available_types)): ?>
+<?php elseif(isset($booking_info)): ?>
     <div class="container p-5 text-light mt-5">
         
         <!-- loop types -->
@@ -78,7 +76,7 @@
                             <span> <?php echo $values['pret'] ?>$ </span>
                         </div>
                         <div class="text-danger">
-                            <span class="fw-bold">Total cost for <?php echo $values['nopti'] . ' night' . ($values['nopti'] > 1 ? 's' : '') ?> : </span>
+                            <span class="fw-bold">Total cost for <?php echo $booking_info['nights'] . ' night' . ($booking_info['nights'] > 1 ? 's' : '') ?> : </span>
                             <span> <?php echo $values['total'] ?>$</span>
                         </div>
                     </div>

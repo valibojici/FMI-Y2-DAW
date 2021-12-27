@@ -9,8 +9,12 @@ function validateDate($date){
 }
 
 function validateName($name){
+    $name = trim($name);
     if(strlen(trim($name)) == 0){
         return 'empty field';
+    }
+    if(!preg_match('/^[a-zA-Z]+$/', $name)){
+        return 'only letters allowed';
     }
     return true;
 }

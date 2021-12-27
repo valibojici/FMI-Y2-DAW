@@ -38,7 +38,7 @@
                     <div class="mt-3">Exp. Year</div>
                     <select name="year" class="w-100">
                         <option selected disabled hidden>Choose here</option>
-                        <?php for($i=date("Y");$i<=date("Y") + 10;++$i) : ?>
+                        <?php for($i=date("Y");$i<=date("Y") + 5;++$i) : ?>
                             <option value="<?php echo $i ?>"> <?php echo $i ?> </option>
                         <?php endfor ?>
                     </select>
@@ -52,7 +52,7 @@
         </div>
 
         <div class="text-center">
-            <button type="submit" class="btn btn-primary mt-5">Confirm booking</button>
+            <button type="submit" class="btn btn-pink text-light mt-5">Confirm booking</button>
         </div>
     </form>
 

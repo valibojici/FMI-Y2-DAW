@@ -1,22 +1,20 @@
 <?php
 
-function getRoomTypeImages($conn){
+function getRoomTypeImages(&$conn){
     $sql = 'SELECT path FROM imagine_tip_camera;';
     $query = $conn->query($sql);
-
     $result = $query->fetch_all();
-    
-    return array_map(function ($arr){return $arr[0]; }, $result);
+    return $result == [] ? null : $result;
 }
 
-function getAvailableRoomTypes($conn, $checkin, $checkout, $guests){
+function getAvailableRoomTypes(&$conn, $checkin, $checkout, $guests){
     $stmt = '
     select t.nume as nume
     from camera c
     left join (
         select id_camera
         from rezervare
-        where ? < check_out and ? > check_in
+        where ? < check_out and ? > check_in and status != -1
         ) r
     on c.id = r.id_camera
     inner join tip_camera t on c.id_tip = t.id
@@ -31,10 +29,10 @@ function getAvailableRoomTypes($conn, $checkin, $checkout, $guests){
     if($result->num_rows > 0){
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-    else return null;
+    return null;
 }
 
-function getRoomInfo($conn, $name){
+function getRoomInfo(&$conn, $name){
     $stmt = '
     select descriere, capacitate, pret
     from tip_camera
@@ -52,7 +50,7 @@ function getRoomInfo($conn, $name){
     else return null;
 }
 
-function getRoomImages($conn, $name){
+function getRoomImages(&$conn, $name){
     $stmt = '
     select i.path as path
     from imagine_tip_camera i
@@ -71,8 +69,20 @@ function getRoomImages($conn, $name){
     else return null;
 }
 
-function getMaxRoomCapacity($conn){
+function getMaxRoomCapacity(&$conn){
     $sql = 'select max(t.capacitate) as capacitate
+    from camera c
+    inner join tip_camera t on t.id = c.id_tip';
+    
+    $result = $conn->query($sql);
+    if($result->num_rows > 0){
+        return $result->fetch_assoc();
+    }
+    return null;
+}
+
+function getMinRoomCapacity(&$conn){
+    $sql = 'select min(t.capacitate) as capacitate
     from camera c
     inner join tip_camera t on t.id = c.id_tip';
     

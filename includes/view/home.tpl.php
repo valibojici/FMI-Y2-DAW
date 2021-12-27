@@ -51,11 +51,13 @@
             </p>
 
             <div class="room-images-container row justify-content-center">
-                <?php foreach($room_img_src as $key => $src): ?>
-                    <div class="col">
-                        <img src="<?php echo $src ?>" alt="" class="img-fluid">
-                    </div>
-                <?php endforeach; ?>
+                <?php if(isset($room_img_src)): ?>
+                    <?php foreach($room_img_src as $key => $src): ?>
+                        <div class="col">
+                            <img src="<?php echo $src ?>" alt="" class="img-fluid">
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif ?>
             </div>
 
             <div class="text-center mt-5">

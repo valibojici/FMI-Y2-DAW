@@ -146,9 +146,17 @@ footer .footer-container {
     ////////////////////////////////////////
 */
 .room-title {
-  margin: 10vh 0px;
+  margin: 5vh 0px;
 }
 
 .room-container {
   background-color: rgba(245, 245, 245, 0.85);
+}
+
+.bg-custom-light {
+  background-color: rgba(213, 213, 213, 0.88) !important;
+}
+
+.btn-pink {
+  background-color: #d88275 !important;
 }

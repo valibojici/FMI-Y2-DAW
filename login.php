@@ -10,8 +10,11 @@
     $view = new View();
     $view->assign('title', 'Login | Hillside Hotel');
 
-    $view->render('./includes/view/login.tpl.php');
+    $view->assign('login_error', $_SESSION['login_error'] ?? null);
+    $view->assign('login_email', $_SESSION['login_email'] ?? null);
 
+    $view->render('./includes/view/login.tpl.php');
     unset($_SESSION['login_error']);
+    unset($_SESSION['login_email']);
 ?>
 

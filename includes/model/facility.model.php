@@ -1,11 +1,11 @@
 <?php
-    function getFacilities($conn){
+    function getFacilities(&$conn){
         $query = $conn->query('select * from facilitate');
         $result = $query->fetch_all(MYSQLI_ASSOC);
         return $result;
     }
 
-    function getFacilityImages($conn, $name)
+    function getFacilityImages(&$conn, $name)
     {
         $stmt = 'select * 
         from imagine_facilitate i 

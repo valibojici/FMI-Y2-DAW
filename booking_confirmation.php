@@ -1,5 +1,5 @@
 <?php
-
+    # aici ajung de la process_booking.php
     session_start();
 
     if(!isset($_SESSION['loggedin'])){
@@ -7,7 +7,8 @@
         exit;
     }
 
-    if(!isset($_SESSION['booking_info'])){
+    // daca nu a trecut prin booking.php sau process_booking.php
+    if(!isset($_SESSION['booking_info']) || !isset($_SESSION['booking_info']['total'])){
         header('Location: booking.php');
         exit;
     }
@@ -15,12 +16,8 @@
     require_once './includes/view/view.php';
 
     $view = new View(['title' => 'Booking | Hillside Hotel']);
-    if(isset($_SESSION['booking_error'])){
-        $view->assign('booking_error', $_SESSION['booking_error']);
-        $view->render('./includes/view/message.tpl.php');
-        exit;
-    }
-    
+
+
     $view->assign('checkin', formatDate($_SESSION['booking_info']['checkin']));
     $view->assign('checkout', formatDate($_SESSION['booking_info']['checkout']));
     $view->assign('guests', $_SESSION['booking_info']['guests']);

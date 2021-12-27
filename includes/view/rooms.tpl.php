@@ -4,8 +4,8 @@
 
 <div class="container p-3 my-5">
     <?php foreach($types as $type) : ?>
-        <div class="p-5 m-5 rounded rounded-3 room-container">
-            <div class="h1 text-center room-title">
+        <div class="p-5 m-4 rounded rounded-3 room-container">
+            <div class="h3 text-center room-title">
                 <?php echo $type['nume'] ?>
                 <hr>
             </div>
@@ -31,7 +31,7 @@
                 </button>
             </div>
             <!-- carousel end -->
-            <div class="fs-4 px-5 py-3 m-5">
+            <div class="fs-5 px-5 py-3 m-4">
                 <?php echo $type['descriere'] ?>
             </div>
 

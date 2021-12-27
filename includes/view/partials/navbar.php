@@ -8,18 +8,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar">
             <div class="navbar-nav align-items-center">
-                <a class="nav-item nav-link m-2 p-2 fs-5" href="index.php"> Home </a>
-                <a class="nav-item nav-link m-2 p-2 fs-5" href="rooms.php"> Rooms </a>
-                <a class="nav-item nav-link m-2 p-2 fs-5" href="facilities.php"> Facilities </a>
-                <a class="nav-item nav-link m-2 p-2 fs-5" href="booking.php"> Booking </a>
-                <a class="nav-item nav-link m-2 p-2 fs-5" href="about_contact.php"> About Us & Contact </a>
+                <a class="nav-item nav-link m-2 p-2 text-center" href="index.php"> Home </a>
+                <a class="nav-item nav-link m-2 p-2 text-center" href="rooms.php"> Rooms </a>
+                <a class="nav-item nav-link m-2 p-2 text-center" href="facilities.php"> Facilities </a>
+                <a class="nav-item nav-link m-2 p-2 text-center" href="booking.php"> Booking </a>
+                <a class="nav-item nav-link m-2 p-2 text-center" href="about_contact.php"> About Us & Contact </a>
+                <a class="nav-item nav-link m-2 p-2 text-center" href="comments.php"> Comments </a>
 
                 <?php if(isset($_SESSION['loggedin'])) : ?>
-                    <a class="nav-item nav-link m-2 p-2 fs-5" href="myaccount.php"> <?php echo $_SESSION['user_email'] ?> </a>
-                    <a class="nav-item nav-link m-2 p-2 fs-5" href="logout.php"> Logout </a>
+                    <a class="nav-item nav-link m-2 p-2 text-center" href="myaccount.php"> <?php echo $_SESSION['user_email'] ?> </a>
+                    <a class="nav-item nav-link m-2 p-2 text-center" href="logout.php"> Logout </a>
                 <?php else : ?>
-                    <a class="nav-item nav-link m-2 p-2 fs-5" href="signup.php"> Sign Up </a>
-                    <a class="nav-item nav-link m-2 p-2 fs-5" href="login.php"> Login </a>
+                    <a class="nav-item nav-link m-2 p-2 text-center" href="signup.php"> Sign Up </a>
+                    <a class="nav-item nav-link m-2 p-2 text-center" href="login.php"> Login </a>
                 <?php endif; ?>
             </div>
         </div>
