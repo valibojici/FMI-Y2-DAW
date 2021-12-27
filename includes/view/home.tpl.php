@@ -2,6 +2,14 @@
 <?php include './includes/view/partials/navbar.php' ?>
 <?php include './includes/view/partials/bg.php' ?>
 
+<div class="container-fluid d-flex justify-content-end">
+    <div class="statistics m-3 border p-3 bg-custom-light rounded-3 position-absolute">
+        <h3>Statistics</h3>
+        <div>Visitors: <?php echo $visitors ?> </div>
+        <div>Visits: <?php echo $visits ?> </div>
+        <div>Views: <?php echo $views ?> </div>
+    </div>
+</div>
 
 <div class="title-container">
     <div class="text-light text-center my-5" id="hotel-name">Hillside Hotel</div>
