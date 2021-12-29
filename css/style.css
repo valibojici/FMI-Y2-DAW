@@ -25,6 +25,18 @@ body {
   font-size: 7rem;
   text-shadow: 7px 7px 7px black;
 }
+@media screen and (max-width: 800px) {
+  .title-container #hotel-name {
+    margin-top: 5rem !important;
+    font-size: 4.5rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .title-container #hotel-name {
+    margin-top: 2rem !important;
+    font-size: 3.5rem;
+  }
+}
 .title-container .book-button {
   width: 20%;
   background-color: #d88275;
@@ -43,9 +55,14 @@ body {
 .title-container .book-button:focus {
   box-shadow: none;
 }
+@media screen and (max-width: 800px) {
+  .title-container .book-button {
+    width: 50%;
+    font-size: 1rem;
+  }
+}
 
 #home-container {
-  padding: 1rem;
   margin-top: 10rem !important;
   background-color: rgba(36, 33, 33, 0.747);
 }
@@ -60,9 +77,13 @@ body {
   display: inline-block;
   background-color: white;
 }
+@media screen and (max-width: 800px) {
+  #home-container {
+    margin-top: 5rem !important;
+  }
+}
 
 #room-container {
-  padding: 1rem;
   margin-top: 10em !important;
   background-color: rgba(226, 226, 226, 0.753);
 }
@@ -91,6 +112,11 @@ body {
 }
 #room-container .btn:hover {
   background-color: #a5685f;
+}
+@media screen and (max-width: 800px) {
+  #room-container {
+    margin-top: 5rem !important;
+  }
 }
 
 .room-images-container img {
@@ -159,4 +185,15 @@ footer .footer-container {
 
 .btn-pink {
   background-color: #d88275 !important;
+}
+
+/* 
+    ////////////////////////////////////////
+                    FACILITIES
+    ////////////////////////////////////////
+*/
+@media screen and (max-width: 500px) {
+  .facility-description {
+    font-size: 1rem !important;
+  }
 }

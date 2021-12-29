@@ -2,23 +2,14 @@
 <?php include './includes/view/partials/navbar.php' ?>
 <?php include './includes/view/partials/bg.php' ?>
 
-<div class="container-fluid d-flex justify-content-end">
-    <div class="statistics m-3 border p-3 bg-custom-light rounded-3 position-absolute">
-        <h3>Statistics</h3>
-        <div>Visitors: <?php echo $visitors ?> </div>
-        <div>Visits: <?php echo $visits ?> </div>
-        <div>Views: <?php echo $views ?> </div>
-    </div>
-</div>
-
 <div class="title-container">
     <div class="text-light text-center my-5" id="hotel-name">Hillside Hotel</div>
     <div class="text-center">
-        <a class='book-button btn px-5 py-4' href="./booking.php">Book now</a>
+        <a class='book-button btn px-2 py-2 px-md-5 py-md-4' href="./booking.php">Book now</a>
     </div>
 </div>
 
-<div class="container my-5 " id='home-container'>
+<div class="container my-5" id='home-container'>
     <div id='description' class="p-3">
         <div>
             <div class="row pt-5 justify-content-center">
@@ -71,6 +62,17 @@
             <div class="text-center mt-5">
                 <a href="./rooms.php" class="btn px-5 py-3 text-light">Learn More About Our Rooms</a>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="mx-auto justify-content-center row text-center p-0">
+    <div class="my-3 border py-2 p-md-3 bg-custom-light col-12 col-md-4">
+        <div class="h4">Statistics</div>
+        <div class="row justify-content-center">
+            <div class="col-3">Visitors: <?php echo $visitors ?> </div>
+            <div class="col-3">Visits: <?php echo $visits ?> </div>
+            <div class="col-3">Views: <?php echo $views ?> </div>
         </div>
     </div>
 </div>

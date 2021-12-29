@@ -32,6 +32,16 @@ $btn_bg_hover : rgb(165, 104, 95);
         font-size: 7rem;
     
         text-shadow: 7px 7px 7px black;
+
+        @media screen and (max-width: 800px) {
+            margin-top: 5rem !important;
+            font-size: 4.5rem; 
+        }
+
+        @media screen and (max-width: 500px) {
+            margin-top: 2rem !important;
+            font-size: 3.5rem; 
+        }
     }
 
     .book-button{
@@ -55,13 +65,16 @@ $btn_bg_hover : rgb(165, 104, 95);
         &:focus{
             box-shadow: none;
         }
+
+        @media screen and (max-width: 800px) {
+            width: 50%;
+            font-size: 1rem;
+        }
     }
 }
 
 
 #home-container{
-    padding: 1rem;
-
     margin-top: 10rem !important;
     background-color: rgba(36, 33, 33, 0.747);
     p{
@@ -76,11 +89,14 @@ $btn_bg_hover : rgb(165, 104, 95);
         display: inline-block;
         background-color: white;
     }
+
+    @media screen and (max-width: 800px) {
+        margin-top: 5rem !important;
+    }
 }
 
 
 #room-container{
-    padding: 1rem;
     margin-top: 10em !important;
     background-color: rgba(226, 226, 226, 0.753);
     p{
@@ -112,6 +128,10 @@ $btn_bg_hover : rgb(165, 104, 95);
         &:hover{
             background-color: $btn_bg_hover;
         }
+    }
+
+    @media screen and (max-width: 800px) {
+        margin-top: 5rem !important;
     }
 }
 
@@ -197,4 +217,16 @@ $user_form_col : rgba(213, 213, 213, 0.88);
 
 .btn-pink{
     background-color: $btn_bg !important;
+}
+
+
+/* 
+    ////////////////////////////////////////
+                    FACILITIES
+    ////////////////////////////////////////
+*/
+.facility-description{
+    @media screen and (max-width: 500px) {
+        font-size: 1rem !important;
+    }
 }

@@ -14,6 +14,8 @@
     }
 
     require_once './includes/view/view.php';
+    require_once './includes/extra/curs.php';
+    $curs = getCurs();
 
     $view = new View(['title' => 'Booking | Hillside Hotel']);
 
@@ -25,6 +27,8 @@
     $view->assign('room_type', $_SESSION['booking_info']['room_type']);
     $view->assign('total', $_SESSION['booking_info']['total']);
 
+    $view->assign('exchange_rates', $curs);
+    
     $view->render('./includes/view/confirm_booking.tpl.php');
 
     function formatDate($date){

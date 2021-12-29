@@ -2,9 +2,9 @@
 <?php include './includes/view/partials/navbar.php' ?>
 <?php include './includes/view/partials/bg.php' ?>
 
-<div class="container p-3 my-5">
+<div class="container p-2 my-5">
     <?php foreach($types as $type) : ?>
-        <div class="p-5 m-4 rounded rounded-3 room-container">
+        <div class="p-2 my-2 my-md-5 p-md-5 mx-md-5 rounded rounded-3 room-container">
             <div class="h3 text-center room-title">
                 <?php echo $type['nume'] ?>
                 <hr>
@@ -31,11 +31,11 @@
                 </button>
             </div>
             <!-- carousel end -->
-            <div class="fs-5 px-5 py-3 m-4">
+            <div class="lead px-1 py-3 m-0 mt-md-4 text-center">
                 <?php echo $type['descriere'] ?>
             </div>
 
-            <div class="fs-4 text-center">
+            <div class="lead text-center">
                 Maximum guests: <?php echo $type['capacitate'] ?>
             </div>
         </div>

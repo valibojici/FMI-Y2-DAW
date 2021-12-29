@@ -2,10 +2,10 @@
 <?php include './includes/view/partials/navbar.php' ?>
 <?php include './includes/view/partials/bg.php' ?>
 
-<div class="container-fluid p-3 my-5">
+<div class="container-fluid my-5 px-xl-5">
     <?php foreach($facilities as $fac) : ?>
-        <div class="p-0 m-5 rounded rounded-3 bg-dark text-light d-flex gap-3 align-items-center">
-            <div class="col-8">
+        <div class="rounded rounded-3 bg-dark text-light row mx-1 my-3 my-lg-5 p-lg-2 align-items-center ">
+            <div class="col-12 col-lg-8 p-0">
                 <!-- carousel start -->
                 <div id="<?php echo str_replace(' ', '', $fac['denumire']) . '-carousel' ?>" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -33,7 +33,7 @@
                     <?php echo $fac['denumire'] ?>
                     <hr>
                 </div>
-                <div class="fs-5 px-3 py-3 m-3">
+                <div class="lead mx-2 text-center text-md-start facility-description">
                     <?php echo $fac['descriere'] ?>
                 </div>
             </div>

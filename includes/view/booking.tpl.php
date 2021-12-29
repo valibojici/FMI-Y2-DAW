@@ -33,12 +33,12 @@
             </div>
     </div>
 <?php elseif(isset($booking_info)): ?>
-    <div class="container p-5 text-light mt-5">
+    <div class="container text-light mt-5">
         
         <!-- loop types -->
         <?php foreach($available_types as $type => $values) : ?>
-            <div class="bg-light p-3 m-4 text-dark row align-items-center rounded-3">
-                <div class="carousel-container col-4">
+            <div class="bg-light mx-1 text-dark row align-items-center rounded-3 my-5 p-lg-4">
+                <div class="carousel-container col-12 col-lg-6 col-xl-5 p-0">
                     <!-- carousel start -->
                     <div id="<?php echo str_replace(' ', '', $type) . '-carousel' ?>" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -62,7 +62,7 @@
                     <!-- carousel end -->
                 </div>
 
-                <div class="col-8 bg-light text-dark p-3 border border-3">
+                <div class="col-12 col-lg-6 col-xl-7 bg-light text-dark my-1 p-3 p-lg-4">
                     <div class="h3 px-3"> <?php echo $type; ?> </div>
                     <hr>
                     <div class="px-3"> <?php echo $values['descriere'] ?> </div>
@@ -81,9 +81,9 @@
                         </div>
                     </div>
 
-                    <form class="d-flex justify-content-center" method="post" action="process_booking.php">
+                    <form class="row justify-content-center" method="post" action="process_booking.php">
                         <input type="hidden" name="room_type" value="<?php echo $type ?>">
-                        <button class="btn btn-lg btn-success me-4 choose-button" type="submit">Choose room</button>
+                        <button class="btn btn-lg btn-success col-8 col-lg-6 col-xl-4 py-1 px-2 py-xl-3 px-xl-4 my-xl-3 choose-button" type="submit">Choose room</button>
                     </form>
                 </div>
 
