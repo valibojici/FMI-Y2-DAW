@@ -138,6 +138,11 @@ footer .footer-title {
 footer .footer-container {
   background-color: rgba(10, 10, 10, 0.9);
 }
+@media screen and (max-width: 500px) {
+  footer {
+    font-size: 0.7rem;
+  }
+}
 
 /* 
     ////////////////////////////////////////
@@ -155,6 +160,19 @@ footer .footer-container {
 */
 .signup-form {
   background-color: rgba(213, 213, 213, 0.88);
+}
+
+@media screen and (max-width: 600px) {
+  .g-recaptcha > * {
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+  }
+}
+@media screen and (max-width: 400px) {
+  .g-recaptcha > * {
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+  }
 }
 
 /* 

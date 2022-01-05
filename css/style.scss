@@ -160,6 +160,12 @@ footer{
     .footer-container{
         background-color: rgba(10, 10, 10, 0.9);
     }
+
+    @media screen and (max-width: 500px) {
+        &{
+            font-size: 0.7rem;
+        }
+    }
 }
 
 
@@ -182,6 +188,22 @@ $user_form_col : rgba(213, 213, 213, 0.88);
 */
 .signup-form{
     background-color: $user_form_col;
+}
+
+.g-recaptcha > *{
+    @media screen and (max-width: 600px) {
+        &{
+            transform: scale(0.9); 
+            -webkit-transform: scale(0.9); 
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        &{
+            transform: scale(0.8); 
+            -webkit-transform: scale(0.8); 
+        }
+    }
 }
 
 

@@ -2,7 +2,7 @@
     
 
 	function verify($response){
-        require_once '../../.config/captcha.php';
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/.config/captcha.php';
         
 		$url = 'https://www.google.com/recaptcha/api/siteverify';
 		$data = array(

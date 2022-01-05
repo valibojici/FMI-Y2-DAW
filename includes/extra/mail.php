@@ -7,14 +7,14 @@
 
         $sent = true;
         try {
-            $mail->SMTPDebug = 3;
+            $mail->SMTPDebug = 0;
             $mail->SMTPAuth = true;
         
             $mail->SMTPSecure = 'ssl';
             $mail->Host       = 'smtp.gmail.com';
             $mail->Port       = 465;
 
-            require_once '../../.config/email.php'; // asta trb schimbat pe hosting
+            require_once $_SERVER['DOCUMENT_ROOT'] . '/.config/email.php';
             $mail->Username   = $email_username;
             $mail->Password   = $email_password;
    

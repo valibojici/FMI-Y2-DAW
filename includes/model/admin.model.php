@@ -29,7 +29,7 @@
     }
 
     function getTables(&$conn){
-        $query = $conn->query('select table_name from information_schema.tables where table_schema = "proiect"');
+        $query = $conn->query('select table_name from information_schema.tables where table_schema = "id18160562_proiect"');
         $result = $query->fetch_all();
         return $result;
     }
@@ -44,7 +44,7 @@
     }
 
     function getColumnNames(&$conn, $tbl){
-        $stmt = 'select column_name from information_schema.columns where table_name = ? and table_schema = "proiect"';
+        $stmt = 'select column_name from information_schema.columns where table_name = ? and table_schema = "id18160562_proiect"';
         $query = $conn->prepare($stmt);
         $query->bind_param('s', $tbl);
         $query->execute();
