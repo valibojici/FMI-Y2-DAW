@@ -5,6 +5,10 @@
     }
     
     session_start();
+    if(isset($_SESSION['loggedin'])){
+        header('Location: index.php');
+        exit;   
+    }
     
     $fname = $_POST['firstname'] ?? null;
     $lname  = $_POST['lastname'] ?? null;
@@ -98,7 +102,7 @@
     $hash = password_hash($email . $pass . 'nk*C6c6@h2-jc932;.L', PASSWORD_BCRYPT);
 
     #trimit mail cu emailul utilizatorului si hashul de mai sus
-    $url = 'https://hillside-hotel.000webhostapp.com/confirm_signup.php?email=' . urlencode($email) . '&hash=' . urlencode($hash);
+    $url = 'http://127.0.0.1/proiect/confirm_signup.php?email=' . urlencode($email) . '&hash=' . urlencode($hash);
     $email_content = "Click <a href='$url'>here</a> to verify your account.";
 
     // daca n a mers sa trimit mail

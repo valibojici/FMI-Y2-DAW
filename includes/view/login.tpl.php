@@ -14,9 +14,14 @@
         </div>
 
         <?php if($login_error) : ?>
-            <div class="mt-4 text-danger">
+            <div class="my-3 text-danger text-center">
                 <span>Error: <?php echo $login_error; ?> </span>
             </div>
+        <?php endif; ?>
+
+        <div class="g-recaptcha d-flex justify-content-center align-items-center" data-sitekey="6Lczd7odAAAAAHImqW8Q6MqYYiq8_3rM4K5sJmSn"></div>
+        <?php if($captcha_error) : ?>
+                <div class="text-danger text-center">Error: <?php echo $captcha_error; ?> </div>
         <?php endif; ?>
 
         <div class="text-center">
@@ -30,6 +35,8 @@
     </form>
 
 </div>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <?php include './includes/view/partials/footer.php' ?>
  
