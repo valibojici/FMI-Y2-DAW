@@ -36,6 +36,11 @@
         quit('myaccount.php');
     }
 
+    if($res_info['status'] != 0){
+        $_SESSION['message'] = 'Cannot cancel reservation.';
+        quit('message.php');
+    }
+
     // ok merge sa fie anulata
     if(strtotime($res_info['check_in']) >= strtotime('+2 day')){
         $ok = deleteReservation($conn, $reservation_id);
